@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    /* Make the image occupy the full width, and be responsive */
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/hotel.jpg" alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <h1 class="bg-dark text-white"> Welcome to WSH </h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/room.jpg" alt="Visual Studio" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <h1 class="bg-dark text-white">  Rooms </h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/dining.jpg" alt="Package Management" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <h1 class="bg-dark text-white"> Dining </h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/room2.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <h1 class="bg-dark text-white"> Rooms </h1>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <h2 class="text-center">Welcome to WSH </h2>
+        <h4>WSH is a beautiful Hotel based in Western Sydney</h4>
+        <h5>We have:</h5>
+        <ul>
+            <li>Outstanding Rooms</li>
+            <li>Restuarants</li>
+            <li>A Gym</li>
+            <li>An amazing pool for your leisure</li>
+            <li>Kind Staff</li>
+        </ul>
+        <h7>Enjoy your stay with us</h7>
+    </div>
+    <div class="col-sm-4">
+        <h2 class="text-center">Useful Links</h2>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li><a href="https://goo.gl/X999M6">Weather in Parramatta</a></li>
+            <li><a href="https://goo.gl/QFrMK2">Weather in Penrith</a></li>
+            <li><a href="https://goo.gl/nzWP5n">Weather in Campbelltown</a></li>
+            <li><a href="https://www.cityofparramatta.nsw.gov.au/">Parramatta City Council</a></li>
+            <li><a href="https://www.penrithcity.nsw.gov.au/">Penrith City Council</a></li>
+            <li><a href="https://www.campbelltown.nsw.gov.au/home">Campbelltown City Council</a></li>
+        </ul>
+    </div>
+</div>

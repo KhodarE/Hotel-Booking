@@ -1,0 +1,92 @@
+﻿@model Webhotel.Models.ViewModels.SearchRooms
+@{
+    ViewData["Title"] = "Search For Rooms";
+}
+
+<h2>Search For Rooms</h2>
+
+
+<form asp-action="SearchForRooms">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="BedCount" class="control-label"></label>
+        <select asp-for="BedCount" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CheckIn" class="control-label"></label>
+        <input asp-for="CheckIn" class="form-control" />
+        <span asp-validation-for="CheckIn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CheckOut" class="control-label"></label>
+        <input asp-for="CheckOut" class="form-control" />
+        <span asp-validation-for="CheckOut" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Search" class="btn btn-default" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@if (Model != null)
+{
+    <div>
+        <hr />
+        @if (ViewBag.FreeRooms.Count == 0)
+        {
+            <h4>There is no room available on <b>@Model.CheckIn</b> to <b>@Model.CheckOut</b>.</h4>
+        }
+        else
+        {
+            <table class="table">
+                <!-- .table is a Bootstrap class giving table styles -->
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                    <th>
+                        Bed Count
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+
+                @foreach (var item in ViewBag.FreeRooms)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.ID">@item.ID</a>
+                        </td>
+                        <td>
+                            @item.Level
+                        </td>
+                        <td>
+                            @item.BedCount
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+}
